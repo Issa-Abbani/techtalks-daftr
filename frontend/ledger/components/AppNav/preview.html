@@ -1,0 +1,28 @@
+<!-- @dsCard group="Navigation & layout" height=520 width=1000 subtitle="Signed-in app: top bar + bottom tabs on phones, side rail from 1024px" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App navigation</title>
+</head>
+<body>
+
+<div class="dz pv">
+  <div class="pv-col"><span class="pv-cap">Phone</span>
+    <div class="pv-phone" style="height:420px;display:flex;flex-direction:column">
+      <header class="dz-appbar"><div class="dz-appbar__title"><span class="dz-appbar__shop">Buzzy Beans</span><span class="dz-appbar__date">Tuesday, 24 November</span></div>
+        <button class="dz-iconbtn" type="button" aria-label="Account"><svg class="dz-ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg></button></header>
+      <div style="flex:1"></div>
+      <nav class="dz-tabbar" aria-label="Main"><a class="dz-tab" href="#" aria-current="page"><span class="dz-tab__pill"><svg class="dz-ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Home</a><a class="dz-tab" href="#"><span class="dz-tab__pill"><svg class="dz-ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.094 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></span>Products</a><a class="dz-tab" href="#"><span class="dz-tab__pill"><svg class="dz-ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>Sales</a><a class="dz-tab" href="#"><span class="dz-tab__pill"><svg class="dz-ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></span>More</a></nav>
+    </div>
+  </div>
+  <div class="pv-col" style="width:520px"><span class="pv-cap">1024px and up</span>
+    <div style="display:flex;height:420px;border:1px solid var(--border-strong);border-radius:var(--radius-card);overflow:hidden;background:var(--canvas)">
+      <nav class="dz-rail" aria-label="Main"><div style="padding:var(--space-1) var(--space-3) var(--space-4)"><a class="dz-logo" href="#" aria-label="Daftr home"><span class="dz-logo__mark"><svg class="dz-ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M10 8h5M10 12h5M10 16h3"/></svg></span><span class="dz-logo__word">Daftr</span></a></div><a href="#" aria-current="page"><svg class="dz-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a><a href="#"><svg class="dz-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.094 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>Products</a><a href="#"><svg class="dz-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Sales</a><a href="#"><svg class="dz-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>Account</a></nav>
+      <div style="flex:1;padding:var(--space-6)"><span class="text-small" style="color:var(--muted)">Page content</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

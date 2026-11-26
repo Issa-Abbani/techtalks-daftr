@@ -1,26 +1,256 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist), var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-plex-arabic), ui-monospace, monospace;
+  --font-heading: var(--font-geist), var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+ * Colours come from the Ledger Clean design system (ledger/tokens.css).
+ * The Ledger tokens are defined first; the shadcn variables below only point at them,
+ * so every component follows the system and dark mode needs no `dark:` colour classes.
+ */
+:root {
+  color-scheme: light;
+  --l-primary: #0b6b63;
+  --l-primary-hover: #084e48;
+  --l-primary-soft: #e3f1ef;
+  --l-on-primary: #ffffff;
+  --l-canvas: #f6f7f8;
+  --l-surface: #ffffff;
+  --l-border: #e3e6ea;
+  --l-border-strong: #7b8696;
+  --l-ink: #14181f;
+  --l-muted: #4a5361;
+  --l-success: #14532d;
+  --l-success-soft: #dcfce7;
+  --l-warning: #7a3e06;
+  --l-warning-soft: #fef3c7;
+  --l-danger: #7f1d1d;
+  --l-danger-soft: #fee2e2;
+  --l-danger-solid: #b91c1c;
+  --l-on-danger: #ffffff;
+  --l-chart-1: #00917f;
+  --l-chart-2: #e8710a;
+  --l-chart-3: #6a5ad8;
+}
+
+.dark {
+  color-scheme: dark;
+  --l-primary: #4fc1b4;
+  --l-primary-hover: #7ad3c9;
+  --l-primary-soft: #123532;
+  --l-on-primary: #062420;
+  --l-canvas: #0e1115;
+  --l-surface: #161a20;
+  --l-border: #272d35;
+  --l-border-strong: #6e7a8a;
+  --l-ink: #e9edf1;
+  --l-muted: #a6b0bc;
+  --l-success: #86e0a6;
+  --l-success-soft: #11301f;
+  --l-warning: #f5c566;
+  --l-warning-soft: #3a2b0c;
+  --l-danger: #fca5a5;
+  --l-danger-soft: #3d1717;
+  --l-danger-solid: #f27a7a;
+  --l-on-danger: #2a0909;
+  --l-chart-1: #20a393;
+  --l-chart-2: #d9752a;
+  --l-chart-3: #9085e9;
+}
+
+/* shadcn variables mapped onto Ledger tokens (same in both themes). */
+:root {
+  --background: var(--l-canvas);
+  --foreground: var(--l-ink);
+  --card: var(--l-surface);
+  --card-foreground: var(--l-ink);
+  --popover: var(--l-surface);
+  --popover-foreground: var(--l-ink);
+  --primary: var(--l-primary);
+  --primary-foreground: var(--l-on-primary);
+  --secondary: var(--l-primary-soft);
+  --secondary-foreground: var(--l-primary);
+  --muted: var(--l-canvas);
+  --muted-foreground: var(--l-muted);
+  --accent: var(--l-primary-soft);
+  --accent-foreground: var(--l-ink);
+  --destructive: var(--l-danger-solid);
+  --border: var(--l-border);
+  --input: var(--l-border-strong);
+  --ring: var(--l-primary);
+  --chart-1: var(--l-chart-1);
+  --chart-2: var(--l-chart-2);
+  --chart-3: var(--l-chart-3);
+  --chart-4: var(--l-border-strong);
+  --chart-5: var(--l-border);
+  --radius: 0.75rem;
+  --sidebar: var(--l-canvas);
+  --sidebar-foreground: var(--l-ink);
+  --sidebar-primary: var(--l-primary);
+  --sidebar-primary-foreground: var(--l-on-primary);
+  --sidebar-accent: var(--l-primary-soft);
+  --sidebar-accent-foreground: var(--l-primary);
+  --sidebar-border: var(--l-border);
+  --sidebar-ring: var(--l-primary);
+}
+
+/* Ledger token names as Tailwind colours: bg-canvas, text-ink, bg-warning-soft, ... */
+@theme inline {
+  --color-canvas: var(--l-canvas);
+  --color-surface: var(--l-surface);
+  --color-ink: var(--l-ink);
+  --color-primary-hover: var(--l-primary-hover);
+  --color-primary-soft: var(--l-primary-soft);
+  --color-on-primary: var(--l-on-primary);
+  --color-border-strong: var(--l-border-strong);
+  --color-success: var(--l-success);
+  --color-success-soft: var(--l-success-soft);
+  --color-warning: var(--l-warning);
+  --color-warning-soft: var(--l-warning-soft);
+  --color-danger: var(--l-danger);
+  --color-danger-soft: var(--l-danger-soft);
+  --color-danger-solid: var(--l-danger-solid);
+  --color-on-danger: var(--l-on-danger);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+  /* Ledger focus ring: one style for everything you can tap. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+  /* Arabic letters must stay joined: no tracking, and drop Latin-only uppercase styling. */
+  html[dir="rtl"] * {
+    letter-spacing: normal !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-medium text-primary;
+  }
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes bar-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes fill-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Elements marked data-reveal fade up as they scroll into view (see ScrollReveal). */
+  html.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+      translate 0.3s ease,
+      border-color 0.3s ease;
+  }
+  html.js [data-reveal="fade"] {
+    transform: none;
+  }
+  html.js [data-reveal="zoom"] {
+    transform: translateY(40px) scale(0.97);
+  }
+  html.js [data-reveal][data-revealed] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Dashboard preview: chart bars and progress fills grow once it is revealed. */
+  html.js [data-reveal] .bar-grow,
+  html.js [data-reveal] .fill-grow {
+    transform: scale(0);
+  }
+  html.js [data-revealed] .bar-grow {
+    transform-origin: bottom;
+    animation: bar-grow 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(400ms + var(--i, 0) * 70ms);
+  }
+  html.js [data-revealed] .fill-grow {
+    transform-origin: left;
+    animation: fill-grow 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(600ms + var(--i, 0) * 90ms);
+  }
+  html[dir="rtl"].js [data-revealed] .fill-grow {
+    transform-origin: right;
+  }
+
+  /* Hover lift uses `translate`, separate from the reveal's `transform`, so both can apply. */
+  /* Ledger uses borders, not shadows: hover lifts the card and edges it in primary. */
+  .lift {
+    transition: translate 0.3s ease, border-color 0.3s ease;
+  }
+  .lift:hover {
+    translate: 0 -4px;
+    border-color: var(--primary);
+  }
 }

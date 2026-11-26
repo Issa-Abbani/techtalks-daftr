@@ -1,0 +1,132 @@
+{
+  "manifestVersion": 3,
+  "name": "Daftr — Ledger Clean",
+  "namespace": "Daftr",
+  "files": [
+    "accessibility.md",
+    "assets/Logos/README.md",
+    "charts.md",
+    "components/Alert/README.md",
+    "components/AppNav/README.md",
+    "components/Button/README.md",
+    "components/Card/README.md",
+    "components/Chart/README.md",
+    "components/CodeInput/README.md",
+    "components/FormMessage/README.md",
+    "components/Logo/README.md",
+    "components/PageLayout/README.md",
+    "components/StatCard/README.md",
+    "components/StatusBadge/README.md",
+    "components/TextField/README.md",
+    "components/TopNav/README.md",
+    "components/bundle.css",
+    "copy.md",
+    "handoff.md",
+    "research.md",
+    "tokens.css"
+  ],
+  "libraries": [],
+  "components": [
+    {
+      "name": "Alert",
+      "group": "Feedback",
+      "summary": "An inline banner about the page or the shop: something the owner should know or act on, not the result of a form."
+    },
+    {
+      "name": "AppNav",
+      "group": "Navigation & layout",
+      "summary": "Navigation inside the signed-in app: a one-row top bar and a bottom tab bar on phones, a side rail from 1024px."
+    },
+    {
+      "name": "Button",
+      "group": "Actions",
+      "summary": "Starts an action."
+    },
+    {
+      "name": "Card",
+      "group": "Data display",
+      "summary": "A surface box that groups related content: a list of products, a form, a chart."
+    },
+    {
+      "name": "Chart",
+      "group": "Data display",
+      "summary": "A bar chart that answers one question in its heading."
+    },
+    {
+      "name": "CodeInput",
+      "group": "Forms",
+      "summary": "Six separate boxes for the email verification code."
+    },
+    {
+      "name": "FormMessage",
+      "group": "Feedback",
+      "summary": "The result of submitting a form, shown at the top of that form: an error that isn't about one field, or a success."
+    },
+    {
+      "name": "Logo",
+      "group": "Brand",
+      "summary": "The Daftr lockup: a notebook mark in a primary tile next to the word \"Daftr\" in Inter 600, -0.02em tracking, ink."
+    },
+    {
+      "name": "PageLayout",
+      "group": "Navigation & layout",
+      "summary": "How screens are laid out: the landing page grid and the centered auth column."
+    },
+    {
+      "name": "StatCard",
+      "group": "Data display",
+      "summary": "One headline number with its label, for the dashboard: Total stock value, Products running low, Sold this week."
+    },
+    {
+      "name": "StatusBadge",
+      "group": "Data display",
+      "summary": "The stock status of one product: an icon and a word in a pill."
+    },
+    {
+      "name": "TextField",
+      "group": "Forms",
+      "summary": "A labelled text input with optional hint and error."
+    },
+    {
+      "name": "TopNav",
+      "group": "Navigation & layout",
+      "summary": "The bar at the top of public pages: logo, a \"Get started\" button and, on phones, a menu."
+    }
+  ],
+  "assetGroups": [
+    {
+      "name": "Logos",
+      "order": [
+        "daftr-mark.svg",
+        "daftr-mark-dark.svg"
+      ],
+      "files": [
+        {
+          "path": "assets/Logos/daftr-mark.svg",
+          "id": "f498175330549f9719441843ad84a069"
+        },
+        {
+          "path": "assets/Logos/daftr-mark-dark.svg",
+          "id": "90e22967537d4264b736b3123c54e08c"
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "files": {
+      "assets/Logos/daftr-mark-dark.svg": {
+        "store": "blob",
+        "id": "90e22967537d4264b736b3123c54e08c",
+        "bytes": 391,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/daftr-mark.svg": {
+        "store": "blob",
+        "id": "f498175330549f9719441843ad84a069",
+        "bytes": 391,
+        "type": "image/svg+xml"
+      }
+    },
+    "blobBytesUsed": 782
+  }
+}

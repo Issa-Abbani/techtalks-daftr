@@ -1,0 +1,126 @@
+/* Daftr — Ledger Clean — generated from tokens.json */
+:root, [data-theme="light"] {
+  --primary: #0b6b63; /* Main buttons, links, focus ring, selected items. As text: light 6.4:1 on `surface`, 5.9:1 on `canvas`; dark 8.0:1 and 8.7:1. */
+  --primary-hover: #084e48; /* Hover and pressed fill for anything painted `primary`. Light darkens, dark lightens; `on-primary` reads 9.6:1 / 9.4:1 on it. */
+  --primary-soft: #e3f1ef; /* Selected rows, info alerts, secondary-button hover. Background only: `ink` (15.3:1 / 11.3:1) or `primary` (5.5:1 / 6.1:1) on it. */
+  --on-primary: #ffffff; /* Text and icons on a `primary` or `primary-hover` fill: 6.4:1 light, 7.5:1 dark. White in light, deep teal in dark, so never write `text-white` on a primary button. Added beyond the brief. */
+  --canvas: #f6f7f8; /* Page background behind everything. Dark is a blue-black, never pure black. */
+  --surface: #ffffff; /* Cards, inputs, nav bar, menus. One step lighter than `canvas` in dark so cards lift without shadows. */
+  --border: #e3e6ea; /* Card borders and dividers only. Decorative (about 1.25:1 in both themes): never the only edge of something you tap. */
+  --border-strong: #7b8696; /* Input, code-box and secondary-button borders: light 3.7:1 on `surface`, 3.4:1 on `canvas`; dark 4.0:1 and 4.3:1. */
+  --disabled: var(--border); /* Fill of disabled buttons (the brief's #E3E6EA in light). Put `muted` text on it: 6.2:1 / 6.3:1. */
+  --ink: #14181f; /* Main text on `canvas`, `surface`, `primary-soft` and every `-soft` status fill: 11:1 or more in both themes. */
+  --muted: #4a5361; /* Secondary text, hints, captions on `canvas` and `surface`: 7.2–7.8:1 light, 7.9–8.6:1 dark. */
+  --success: #14532d; /* Healthy badge text and icon, success message text. On `success-soft`: 8.3:1 light, 9.0:1 dark. */
+  --success-soft: #dcfce7; /* Healthy badge and success message fill. */
+  --warning: #7a3e06; /* Low stock badge text and icon, warning alert text. On `warning-soft`: 7.5:1 light, 8.5:1 dark. */
+  --warning-soft: #fef3c7; /* Low stock badge and warning alert fill. */
+  --danger: #7f1d1d; /* Out of stock and Expired badge text, error message text, destructive-button hover fill. On `danger-soft`: 8.2:1 / 8.3:1. */
+  --danger-soft: #fee2e2; /* Out of stock / Expired badge and error message fill. */
+  --danger-solid: #b91c1c; /* Destructive button fill; field error text, icon and border. As text on `surface` 6.5:1 in both themes; on `danger-soft` 5.3:1 / 5.9:1. */
+  --on-danger: #ffffff; /* Text on a `danger-solid` or `danger` fill: 6.5:1 light, 6.9:1 dark. Added beyond the brief. */
+  --chart-1: #00917f; /* First data series in charts (bars, lines). A brighter teal than `primary` because chart marks need chroma to read as colour. Charts only: never text, never buttons. */
+  --chart-2: #e8710a; /* Second series. Orange, picked to stay apart from teal for colour-blind readers (validated: worst pair ΔE 11.4 light, 13.0 dark). Not a status colour. */
+  --chart-3: #6a5ad8; /* Third series. Charts never show more than three; fold the rest into "Other". Values and labels stay in `ink` / `muted`, never in a series colour. */
+  --shadow-card: none; /* No shadows in Ledger Clean, in either theme: cards are edged by a 1px `border`. Kept as a token so code can say `shadow-card` and stay correct if that ever changes. */
+}
+[data-theme="dark"] {
+  --primary: #4fc1b4;
+  --primary-hover: #7ad3c9;
+  --primary-soft: #123532;
+  --on-primary: #062420;
+  --canvas: #0e1115;
+  --surface: #161a20;
+  --border: #272d35;
+  --border-strong: #6e7a8a;
+  --disabled: var(--border);
+  --ink: #e9edf1;
+  --muted: #a6b0bc;
+  --success: #86e0a6;
+  --success-soft: #11301f;
+  --warning: #f5c566;
+  --warning-soft: #3a2b0c;
+  --danger: #fca5a5;
+  --danger-soft: #3d1717;
+  --danger-solid: #f27a7a;
+  --on-danger: #2a0909;
+  --chart-1: #20a393;
+  --chart-2: #d9752a;
+  --chart-3: #9085e9;
+}
+:root {
+  --space-1: 4px; /* Icon-to-text gap inside badges; tightest nudge. */
+  --space-2: 8px; /* Label to input; icon to label in buttons; between code boxes. */
+  --space-3: 12px; /* Inside alerts and form messages; between a row's two lines. */
+  --space-4: 16px; /* Page side padding on phones; card padding on phones; between form fields. */
+  --space-6: 24px; /* Card padding from 640px up; gap between cards; button side padding. */
+  --space-8: 32px; /* Between page sections on phones; page side padding from 1024px. */
+  --space-12: 48px; /* Between landing sections on phones. Added beyond the brief's list for page rhythm. */
+  --space-16: 64px; /* Between landing sections from 768px. Added beyond the brief's list for page rhythm. */
+  --control-height: 52px; /* Height of every button and text input (the brief allows 48–52px; 52 keeps thumbs comfortable). Tailwind: `h-control`. */
+  --icon-sm: 16px; /* Icons inside badges and chart flags. Tailwind: `size-4`. */
+  --icon-md: 20px; /* Icons in buttons, fields, alerts, form messages. Tailwind: `size-5`. */
+  --icon-lg: 24px; /* Menu toggle, app-nav icons, empty-state tiles. Tailwind: `size-6`. */
+  --tap-min: 44px; /* Smallest tap target: icon buttons, Show/Hide, text links, menu toggle. Tailwind: `min-h-tap min-w-tap`. */
+  --radius-control: 8px; /* Inputs, code boxes, alerts, form messages, the logo tile. */
+  --radius-card: 12px; /* Cards, stat cards, the auth card, the mobile menu sheet. */
+  --radius-button: 8px; /* Buttons. Same as `radius-control` today; its own token so per-business theming can round buttons without touching inputs. */
+  --radius-pill: 999px; /* Status badges and the Sample data tag. */
+  --font-sans: "Inter", "Noto Sans Arabic", system-ui, sans-serif;
+  --text-text-display: 600 40px/48px var(--font-sans); /* Landing-page hero headline and the big number in a stat card. One per screen. */
+  --text-text-heading: 600 30px/36px var(--font-sans); /* Screen title: Welcome back, Check your email, Dashboard. */
+  --text-text-title: 600 20px/28px var(--font-sans); /* Card titles, section titles, menu headings. */
+  --text-text-body: 400 16px/24px var(--font-sans); /* Everything people read: descriptions, form text, table rows. Never smaller in inputs (iOS zooms below 16px). */
+  --text-text-small: 400 14px/20px var(--font-sans); /* Hints, secondary lines in a row, footer text. */
+  --text-text-caption: 500 13px/18px var(--font-sans); /* Status badges and tiny meta (Sample data). Never for sentences. */
+  --text-text-label: 500 14px/20px var(--font-sans); /* Form labels and nav links. Added beyond the brief's scale so labels stay consistent. */
+}
+.text-display {
+  font-family: var(--font-sans);
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.text-heading {
+  font-family: var(--font-sans);
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.text-title {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.text-body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.text-small {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.text-caption {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.text-label {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
