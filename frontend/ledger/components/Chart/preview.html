@@ -1,0 +1,49 @@
+<!-- @dsCard group="Data display" height=560 width=1180 subtitle="One question, one series, a table behind it" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chart</title>
+</head>
+<body>
+
+<div class="dz pv">
+  <div class="pv-col" style="width:390px"><span class="pv-cap">Ready (hover or Tab to a bar)</span>
+    <section class="dz-card" aria-labelledby="ch1" aria-describedby="ch1s">
+      <div class="dz-card__head"><h2 class="text-title" id="ch1">When will each product run out?</h2><span class="dz-tag">Sample data</span></div>
+      <p class="dz-stat__note" id="ch1s">Days of stock left at the last 7 days' pace, as of 24 Nov, 10:42. Oat Milk runs out first, in 2 days.</p>
+      <div class="dz-chart" role="group" aria-label="Days of stock left by product"><div class="dz-chart__row"><span class="dz-chart__name">Oat Milk<span class="dz-chart__flag"><svg class="dz-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>Low stock</span></span><span class="dz-chart__track" tabindex="0" aria-label="Oat Milk: 2 days of stock left"><span class="dz-chart__lane"><span class="dz-chart__bar" style="width:9.5%"></span></span><span class="dz-chart__val dz-num">2 days</span><span class="dz-chart__tip" role="tooltip">Oat Milk: 2 days left at the last 7 days' pace</span></span></div><div class="dz-chart__row"><span class="dz-chart__name">Paper Cups</span><span class="dz-chart__track" tabindex="0" aria-label="Paper Cups: 7 days of stock left"><span class="dz-chart__lane"><span class="dz-chart__bar" style="width:33.3%"></span></span><span class="dz-chart__val dz-num">7 days</span><span class="dz-chart__tip" role="tooltip">Paper Cups: 7 days left at the last 7 days' pace</span></span></div><div class="dz-chart__row"><span class="dz-chart__name">Espresso Beans</span><span class="dz-chart__track" tabindex="0" aria-label="Espresso Beans: 20 days of stock left"><span class="dz-chart__lane"><span class="dz-chart__bar" style="width:95.2%"></span></span><span class="dz-chart__val dz-num">20 days</span><span class="dz-chart__tip" role="tooltip">Espresso Beans: 20 days left at the last 7 days' pace</span></span></div>
+        <div class="dz-chart__axis dz-num" aria-hidden="true"><span class="dz-chart__ticks"><span style="inset-inline-start:0">0</span><span style="inset-inline-start:33.3%">7</span><span style="inset-inline-start:66.7%">14</span><span style="inset-inline-start:100%">21</span></span><span class="dz-chart__unit">days</span></div>
+      </div>
+      <details class="dz-chart__table"><summary class="dz-link">Show as table</summary>
+        <table class="text-small"><thead><tr><th style="text-align:start">Product</th><th style="text-align:end">Days left</th></tr></thead><tbody><tr><td>Oat Milk</td><td class='dz-num' style='text-align:end'>2</td></tr><tr><td>Paper Cups</td><td class='dz-num' style='text-align:end'>7</td></tr><tr><td>Espresso Beans</td><td class='dz-num' style='text-align:end'>20</td></tr></tbody></table>
+      </details>
+    </section>
+  </div>
+  <div class="pv-col" style="width:340px"><span class="pv-cap">Loading</span>
+    <section class="dz-card" aria-busy="true" aria-label="When will each product run out, loading">
+      <h2 class="text-title">When will each product run out?</h2>
+      <span class="dz-skel" style="display:block;height:14px;width:80%"></span>
+      <span class="dz-skel" style="display:block;height:24px;width:30%;margin-top:12px"></span>
+      <span class="dz-skel" style="display:block;height:24px;width:60%"></span>
+      <span class="dz-skel" style="display:block;height:24px;width:90%"></span>
+    </section>
+    <span class="pv-cap" style="margin-top:var(--space-4)">Empty</span>
+    <section class="dz-card">
+      <h2 class="text-title">When will each product run out?</h2>
+      <p class="text-small" style="color:var(--muted)">No sales yet. This chart fills in after a week of sales.</p>
+    </section>
+  </div>
+  <div class="pv-col" style="width:340px"><span class="pv-cap">Error</span>
+    <section class="dz-card">
+      <h2 class="text-title">When will each product run out?</h2>
+      <div class="dz-empty" role="alert">
+        <span class="dz-error" style="font-size:15px;line-height:22px"><svg class="dz-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>Couldn't load this chart. Check your connection.</span></span>
+        <button class="dz-btn dz-btn--secondary" type="button">Reload</button>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

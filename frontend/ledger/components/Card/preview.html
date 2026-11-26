@@ -1,0 +1,44 @@
+<!-- @dsCard group="Data display" height=470 width=1180 subtitle="Ready, empty and error states" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card</title>
+</head>
+<body>
+
+<div class="dz pv">
+  <div class="pv-col" style="width:358px"><span class="pv-cap">Default</span>
+    <section class="dz-card" aria-labelledby="c1">
+      <div class="dz-card__head"><h2 class="text-title" id="c1">Stock levels</h2><span class="dz-tag">Sample data</span></div>
+      <div class="dz-rows">
+        <div class="dz-prow"><div><div class="dz-prow__name">Espresso Beans</div><div class="dz-prow__meta dz-num">12 kg, reorder at 5</div></div><span class="dz-badge dz-badge--healthy"><svg class="dz-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Healthy</span></div>
+        <div class="dz-prow"><div><div class="dz-prow__name">Oat Milk</div><div class="dz-prow__meta dz-num">3 cartons, reorder at 6</div></div><span class="dz-badge dz-badge--low"><svg class="dz-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>Low stock</span></div>
+        <div class="dz-prow"><div><div class="dz-prow__name">Paper Cups</div><div class="dz-prow__meta dz-num">200 pcs</div></div><span class="dz-badge dz-badge--healthy"><svg class="dz-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Healthy</span></div>
+      </div>
+    </section>
+  </div>
+  <div class="pv-col" style="width:358px"><span class="pv-cap">Empty state</span>
+    <section class="dz-card" aria-labelledby="c2">
+      <h2 class="text-title" id="c2">Stock levels</h2>
+      <div class="dz-empty">
+        <span class="dz-empty__icon"><svg class="dz-ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.094 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></span>
+        <p class="text-body" style="font-weight:600">No products yet</p>
+        <p class="text-small" style="color:var(--muted)">Add your first product to start tracking what's on your shelves.</p>
+        <button class="dz-btn dz-btn--primary" type="button"><svg class="dz-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Add product</button>
+      </div>
+    </section>
+  </div>
+  <div class="pv-col" style="width:358px"><span class="pv-cap">Error</span>
+    <section class="dz-card" aria-labelledby="c3">
+      <h2 class="text-title" id="c3">Stock levels</h2>
+      <div class="dz-empty" role="alert">
+        <span class="dz-error" style="font-size:15px;line-height:22px"><svg class="dz-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>Couldn't load stock levels. Check your connection.</span></span>
+        <button class="dz-btn dz-btn--secondary" type="button">Reload</button>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

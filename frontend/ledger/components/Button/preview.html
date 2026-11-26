@@ -1,0 +1,40 @@
+<!-- @dsCard group="Actions" height=330 subtitle="Primary, secondary, danger, disabled, loading" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Button</title>
+</head>
+<body>
+
+<div class="dz pv">
+  <div class="pv-col" style="width:342px">
+    <span class="pv-cap">Full width on phones (390px screen)</span>
+    <button class="dz-btn dz-btn--primary dz-btn--block" type="button" id="demo">Log in</button>
+    <button class="dz-btn dz-btn--secondary dz-btn--block" type="button">Log in with a code instead</button>
+    <a class="dz-link" href="#" style="align-self:center">Forgot password?</a>
+  </div>
+  <div class="pv-col">
+    <span class="pv-cap">Variants</span>
+    <div class="pv-row">
+      <button class="dz-btn dz-btn--primary" type="button">Create account</button>
+      <button class="dz-btn dz-btn--secondary" type="button">Log in</button>
+      <button class="dz-btn dz-btn--danger" type="button">Delete product</button>
+    </div>
+    <span class="pv-cap">Disabled and loading</span>
+    <div class="pv-row">
+      <button class="dz-btn dz-btn--primary" type="button" disabled>Verify email</button>
+      <button class="dz-btn dz-btn--primary" type="button" aria-busy="true"><svg class="dz-ic dz-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>Logging in…</button>
+    </div>
+    <span class="pv-cap">Tap the first Log in button to see loading</span>
+  </div>
+</div>
+<script>
+
+var b=document.getElementById('demo');var spin='<svg class="dz-ic dz-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>';
+b.addEventListener('click',function(){if(b.getAttribute('aria-busy')==='true')return;b.setAttribute('aria-busy','true');b.innerHTML=spin+'Logging in…';
+setTimeout(function(){b.removeAttribute('aria-busy');b.textContent='Log in';},1600);});
+</script>
+</body>
+</html>

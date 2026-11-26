@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "title": "Daftr | Simple inventory management for small businesses",
+    "description": "Daftr replaces paper ledgers and spreadsheets with a simple, affordable inventory app for coffee shops, mini markets and snack shops."
+  },
+  "brand": "Daftr",
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "signIn": "Sign in",
+    "signUp": "Get started",
+    "openMenu": "Open menu",
+    "menuTitle": "Navigation",
+    "toggleTheme": "Toggle light and dark mode",
+    "switchLanguage": "Switch language",
+    "primaryNav": "Primary"
+  },
+  "hero": {
+    "badge": "Inventory management for small businesses",
+    "titleLead": "Run your stock with clarity,",
+    "titleAccent": "not a paper ledger.",
+    "subtitle": "Daftr gives coffee shops, mini markets and snack shops a simple, affordable way to track inventory. No complex software, no expensive licences, no training required.",
+    "primaryCta": "Create free account",
+    "secondaryCta": "View pricing",
+    "highlights": [
+      "Free plan available",
+      "Works on any phone",
+      "Set up in minutes"
+    ],
+    "preview": {
+      "url": "app.daftr.com/dashboard",
+      "shopName": "Corner Coffee",
+      "search": "Search products",
+      "menu": ["Dashboard", "Products", "Import", "Settings"],
+      "stockValue": "Stock value",
+      "products": "Products",
+      "lowStock": "Low stock",
+      "stockValueAmount": "$12,480",
+      "stockValueChange": "+4.2% this month",
+      "productsChange": "12 added this week",
+      "lowStockChange": "Needs reorder",
+      "salesTitle": "Units sold, last 7 days",
+      "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "topProductsTitle": "Top products",
+      "sold": "sold",
+      "items": ["Espresso beans 1kg", "Whole milk 1L", "Butter croissant", "Bottled water"],
+      "lowStockTitle": "Running low",
+      "lowStockItems": ["Paper cups", "Oat milk 1L", "Sugar sachets"],
+      "left": "left"
+    }
+  },
+  "trust": {
+    "title": "Built for the businesses that keep neighbourhoods running",
+    "businesses": ["Coffee shops", "Mini markets", "Snack shops", "Bakeries", "Kiosks", "Local grocers"]
+  },
+  "features": {
+    "eyebrow": "Features",
+    "title": "Everything a small business needs. Nothing it doesn't.",
+    "description": "Four focused tools that replace the notebook behind the counter, designed to be understood in minutes.",
+    "items": [
+      {
+        "title": "A private account for your business",
+        "description": "Sign up in a minute and get a secure workspace. Only you and the people you invite can see your stock."
+      },
+      {
+        "title": "Import from paper or Excel",
+        "description": "Bring your existing inventory over from a paper ledger or an Excel sheet, without starting from scratch."
+      },
+      {
+        "title": "Manage every product",
+        "description": "Add, edit, delete and search products in seconds, from a phone at the counter or an older computer in the back office."
+      },
+      {
+        "title": "A dashboard that makes sense",
+        "description": "See stock value, low-stock items and top products at a glance, so you always know what to reorder."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "From notebook to dashboard in three steps.",
+    "description": "No consultants and no installation. Daftr runs in your browser.",
+    "stepLabel": "Step",
+    "steps": [
+      {
+        "title": "Create your account",
+        "description": "Sign up with your email and name your business. It takes less than a minute."
+      },
+      {
+        "title": "Bring your inventory",
+        "description": "Upload your Excel sheet or type in products from your ledger. We guide you through it."
+      },
+      {
+        "title": "Track and grow",
+        "description": "Update stock as you sell and use your dashboard to make better buying decisions."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Simple pricing for small budgets.",
+    "description": "Start free and upgrade only when your business needs more. No setup fees and no long contracts.",
+    "popular": "Most popular",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$0",
+        "period": "forever",
+        "description": "For a single shop moving off paper.",
+        "cta": "Start for free",
+        "features": ["Up to 100 products", "1 user", "Import from Excel", "Basic dashboard"]
+      },
+      {
+        "name": "Business",
+        "price": "$9",
+        "period": "per month",
+        "description": "For growing shops that need the full picture.",
+        "cta": "Start 14-day trial",
+        "features": ["Unlimited products", "Up to 3 users", "Import from Excel or paper", "Full dashboard and stock value", "Low-stock alerts"]
+      },
+      {
+        "name": "Plus",
+        "price": "$19",
+        "period": "per month",
+        "description": "For owners with more than one location.",
+        "cta": "Choose Plus",
+        "features": ["Everything in Business", "Up to 3 locations", "Unlimited users", "Priority support"]
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Made for the shop on the corner.",
+    "paragraphs": [
+      "Many small businesses still track their stock in a notebook or a spreadsheet. Enterprise software exists, but it is too expensive and too complicated for a coffee shop or a mini market.",
+      "We built Daftr to close that gap: the benefits of digital inventory management, without the cost, the setup or the learning curve."
+    ],
+    "values": [
+      { "title": "Easy to use", "description": "If you can use a phone, you can use Daftr." },
+      { "title": "Affordable", "description": "Priced for small shops, not large companies." },
+      { "title": "Mobile friendly", "description": "Check stock from the counter or on the go." },
+      { "title": "Lightweight", "description": "Fast on older computers and slow connections." }
+    ],
+    "comparison": {
+      "title": "How Daftr compares",
+      "feature": "Capability",
+      "columns": ["Paper ledger", "Excel", "Enterprise software", "Daftr"],
+      "rows": ["Affordable", "Easy to learn", "Works on a phone", "Automatic stock totals", "Low-stock alerts"],
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact us",
+    "title": "Questions? We're here to help.",
+    "description": "Not sure if Daftr fits your business, or need help moving your inventory over? Send us a message and a real person will reply.",
+    "details": {
+      "email": { "label": "Email", "value": "hello@daftr.app" },
+      "phone": { "label": "Phone", "value": "+961 00 000 000" },
+      "location": { "label": "Location", "value": "Beirut, Lebanon" },
+      "hours": { "label": "Response time", "value": "Usually within one business day" }
+    },
+    "form": {
+      "title": "Send us a message",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "business": "Business type",
+      "businessPlaceholder": "Coffee shop, mini market, snack shop",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your business and how you track stock today.",
+      "submit": "Send message"
+    }
+  },
+  "footer": {
+    "ctaTitle": "Close the notebook. Open Daftr.",
+    "ctaDescription": "Create your free account today and see your whole inventory in one place.",
+    "ctaPrimary": "Get started free",
+    "ctaSecondary": "Contact sales",
+    "tagline": "Simple, affordable inventory management for coffee shops, mini markets and snack shops.",
+    "columns": {
+      "product": "Product",
+      "company": "Company",
+      "account": "Account"
+    },
+    "links": {
+      "dashboard": "Dashboard",
+      "privacy": "Privacy policy",
+      "terms": "Terms of service"
+    },
+    "copyright": "© 2026 Daftr. All rights reserved.",
+    "madeFor": "Built for small businesses"
+  }
+}

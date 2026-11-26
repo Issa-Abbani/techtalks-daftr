@@ -1,0 +1,28 @@
+<!-- @dsCard group="Data display" height=300 subtitle="One big number + label" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stat card</title>
+</head>
+<body>
+
+<div class="dz pv">
+  <div class="pv-col" style="width:358px"><span class="pv-cap">Default</span>
+    <section class="dz-card dz-stat" aria-labelledby="s1">
+      <div class="dz-stat__label"><span id="s1">Total stock value</span><span class="dz-tag">Sample data</span></div>
+      <span class="text-display dz-stat__value">$1,284</span>
+      <span class="dz-stat__note">Across 3 products, as of 24 Nov, 10:42</span>
+    </section>
+  </div>
+  <div class="pv-col" style="width:358px"><span class="pv-cap">Loading (skeleton, same size)</span>
+    <section class="dz-card dz-stat" aria-busy="true" aria-label="Total stock value, loading">
+      <div class="dz-stat__label"><span>Total stock value</span></div>
+      <span class="dz-skel" style="display:block;width:150px;height:44px;margin-block:2px"></span>
+      <span class="dz-skel" style="display:block;width:120px;height:14px;margin-top:6px"></span>
+    </section>
+  </div>
+</div>
+</body>
+</html>
