@@ -35,6 +35,8 @@ async function renderedText(page: Page) {
 
 // Strings that only render once the mobile menu is open; covered by the responsive suite.
 const RENDERED_LATER = new Set(["nav.menuTitle"]);
+// Sections that render on other pages (log in, sign up), not on the home page.
+const OTHER_PAGES = ["auth."];
 const LATIN_ALLOWED_IN_AR = ["app.daftr.com/dashboard", "hello@daftr.app", "you@example.com"];
 
 for (const lang of ["en", "ar"] as const) {
@@ -51,6 +53,7 @@ for (const lang of ["en", "ar"] as const) {
       const haystack = [text, ...attrs, ...head].join("\n").replace(/\s+/g, " ");
       const missing = leaves(dictionaries[lang])
         .filter((l) => !RENDERED_LATER.has(l.path))
+        .filter((l) => !OTHER_PAGES.some((prefix) => l.path.startsWith(prefix)))
         .filter((l) => !haystack.includes(l.value.replace(/\s+/g, " ")))
         .map((l) => `${l.path}: "${l.value}"`);
       expect(missing, "dictionary strings that never appear on the page").toEqual([]);
