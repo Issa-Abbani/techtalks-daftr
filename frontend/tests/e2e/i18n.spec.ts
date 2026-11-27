@@ -1,3 +1,12 @@
+/*
+ * Translation checks in a real browser.
+ *
+ * For each language: every string from its locale file appears on the page,
+ * and no text from the other language slipped in. Also covers the redirect
+ * from "/" to the visitor's language, 404 for unknown languages, and the
+ * language switcher.
+ */
+
 import { expect, test, type Page } from "@playwright/test";
 
 import en from "../../locales/en.json" with { type: "json" };
@@ -5,10 +14,11 @@ import ar from "../../locales/ar.json" with { type: "json" };
 
 const dictionaries = { en, ar } as const;
 
-function leaves(node: unknown, path = ""): { path: string; value: string }[] {
-  if (Array.isArray(node)) return node.flatMap((v, i) => leaves(v, `${path}[${i}]`));
+/** Every string in a locale file, with its path, e.g. { path: "nav.signIn", value: "Sign in" }. */
+function flattenStrings(node: unknown, path = ""): { path: string; value: string }[] {
+  if (Array.isArray(node)) return node.flatMap((v, i) => flattenStrings(v, `${path}[${i}]`));
   if (node && typeof node === "object") {
-    return Object.entries(node).flatMap(([k, v]) => leaves(v, path ? `${path}.${k}` : k));
+    return Object.entries(node).flatMap(([k, v]) => flattenStrings(v, path ? `${path}.${k}` : k));
   }
   return [{ path, value: String(node) }];
 }
@@ -49,7 +59,7 @@ for (const lang of ["en", "ar"] as const) {
       await page.goto(`/${lang}`);
       const { text, attrs, head } = await renderedText(page);
       const haystack = [text, ...attrs, ...head].join("\n").replace(/\s+/g, " ");
-      const missing = leaves(dictionaries[lang])
+      const missing = flattenStrings(dictionaries[lang])
         .filter((l) => !RENDERED_LATER.has(l.path))
         .filter((l) => !haystack.includes(l.value.replace(/\s+/g, " ")))
         .map((l) => `${l.path}: "${l.value}"`);

@@ -1,3 +1,7 @@
+/*
+ * Browser test setup. Tests run against the production build (`npm run build`
+ * first), served on port 3123, in your installed Google Chrome.
+ */
 import { defineConfig } from "@playwright/test";
 
 const PORT = 3123;

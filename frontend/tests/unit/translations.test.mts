@@ -1,3 +1,9 @@
+/*
+ * Translation checks that run without a browser (`npm test`):
+ * - en.json and ar.json have exactly the same keys, and nothing is empty
+ * - Arabic values are really Arabic, English values contain no Arabic
+ * - no component has text typed directly into it instead of coming from the locale files
+ */
 import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
@@ -10,16 +16,17 @@ import ar from "../../locales/ar.json" with { type: "json" };
 
 type Leaf = { path: string; value: unknown };
 
-function leaves(node: unknown, path = ""): Leaf[] {
-  if (Array.isArray(node)) return node.flatMap((v, i) => leaves(v, `${path}[${i}]`));
+/** Every value in a locale file, with its path, e.g. { path: "nav.signIn", value: "Sign in" }. */
+function flattenStrings(node: unknown, path = ""): Leaf[] {
+  if (Array.isArray(node)) return node.flatMap((v, i) => flattenStrings(v, `${path}[${i}]`));
   if (node && typeof node === "object") {
-    return Object.entries(node).flatMap(([k, v]) => leaves(v, path ? `${path}.${k}` : k));
+    return Object.entries(node).flatMap(([k, v]) => flattenStrings(v, path ? `${path}.${k}` : k));
   }
   return [{ path, value: node }];
 }
 
-const enLeaves = leaves(en);
-const arLeaves = leaves(ar);
+const enLeaves = flattenStrings(en);
+const arLeaves = flattenStrings(ar);
 const enMap = new Map(enLeaves.map((l) => [l.path, l.value]));
 const arMap = new Map(arLeaves.map((l) => [l.path, l.value]));
 
