@@ -194,5 +194,61 @@
     },
     "copyright": "© 2026 Daftr. All rights reserved.",
     "madeFor": "Built for small businesses"
+  },
+  "auth": {
+    "fields": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@yourshop.com",
+      "passwordLabel": "Password",
+      "showPassword": "Show",
+      "hidePassword": "Hide"
+    },
+    "errors": {
+      "emailRequired": "Enter your email.",
+      "emailInvalid": "Check your email. It should look like name@example.com.",
+      "passwordRequired": "Enter your password.",
+      "passwordTooShort": "Use at least 8 characters.",
+      "businessNameRequired": "Enter your business name.",
+      "codeIncomplete": "Enter all 6 digits."
+    },
+    "login": {
+      "metaTitle": "Log in | Daftr",
+      "heading": "Welcome back",
+      "subheading": "Log in to see what is in stock.",
+      "passwordPlaceholder": "Your password",
+      "submit": "Log in",
+      "forgotPassword": "Forgot password?",
+      "signupPrompt": "New to Daftr?",
+      "signupLink": "Create your business account"
+    },
+    "signup": {
+      "metaTitle": "Create account | Daftr",
+      "heading": "Set up your shop",
+      "subheading": "It takes about a minute.",
+      "businessNameLabel": "Business name",
+      "businessNameHint": "The name your customers know.",
+      "businessNamePlaceholder": "Buzzy Beans",
+      "passwordHint": "At least 8 characters.",
+      "submit": "Create account",
+      "loginPrompt": "Already have an account?",
+      "loginLink": "Log in"
+    },
+    "resetPassword": {
+      "metaTitle": "Reset password | Daftr",
+      "heading": "Reset your password",
+      "subheading": "Enter your email and we'll send you a link to set a new one.",
+      "submit": "Send reset link",
+      "backToLogin": "Back to log in"
+    },
+    "verifyEmail": {
+      "metaTitle": "Verify email | Daftr",
+      "heading": "Check your email",
+      "subheading": "Enter the 6-digit code we sent to your email.",
+      "codeLabel": "Verification code",
+      "digitLabels": ["Digit 1 of 6", "Digit 2 of 6", "Digit 3 of 6", "Digit 4 of 6", "Digit 5 of 6", "Digit 6 of 6"],
+      "submit": "Verify email",
+      "resendPrompt": "No email? Check your spam folder.",
+      "resendButton": "Send a new code"
+    }
   }
 }
