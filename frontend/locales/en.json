@@ -194,5 +194,43 @@
     },
     "copyright": "© 2026 Daftr. All rights reserved.",
     "madeFor": "Built for small businesses"
+  },
+  "auth": {
+    "fields": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@yourshop.com",
+      "passwordLabel": "Password",
+      "showPassword": "Show",
+      "hidePassword": "Hide"
+    },
+    "errors": {
+      "emailRequired": "Enter your email.",
+      "emailInvalid": "Check your email. It should look like name@example.com.",
+      "passwordRequired": "Enter your password.",
+      "passwordTooShort": "Use at least 8 characters.",
+      "businessNameRequired": "Enter your business name."
+    },
+    "login": {
+      "metaTitle": "Log in | Daftr",
+      "heading": "Welcome back",
+      "subheading": "Log in to see what is in stock.",
+      "passwordPlaceholder": "Your password",
+      "submit": "Log in",
+      "forgotPassword": "Forgot password?",
+      "signupPrompt": "New to Daftr?",
+      "signupLink": "Create your business account"
+    },
+    "signup": {
+      "metaTitle": "Create account | Daftr",
+      "heading": "Set up your shop",
+      "subheading": "It takes about a minute.",
+      "businessNameLabel": "Business name",
+      "businessNameHint": "The name your customers know.",
+      "businessNamePlaceholder": "Buzzy Beans",
+      "passwordHint": "At least 8 characters.",
+      "submit": "Create account",
+      "loginPrompt": "Already have an account?",
+      "loginLink": "Log in"
+    }
   }
 }

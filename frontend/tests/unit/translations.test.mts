@@ -33,6 +33,7 @@ const LANGUAGE_NEUTRAL = new Set([
   "contact.details.email.value",
   "contact.details.phone.value",
   "contact.form.emailPlaceholder",
+  "auth.fields.emailPlaceholder",
   "pricing.plans[0].price",
   "pricing.plans[1].price",
   "pricing.plans[2].price",
@@ -78,7 +79,7 @@ describe("locale files", () => {
 
 // Source scan: any user-visible text written directly in JSX bypasses the locale files.
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
-const SCANNED_DIRS = ["app", "components/home"];
+const SCANNED_DIRS = ["app", "components/home", "components/auth"];
 const TRANSLATABLE_ATTRS = new Set(["aria-label", "placeholder", "title", "alt"]);
 
 function tsxFiles(dir: string): string[] {

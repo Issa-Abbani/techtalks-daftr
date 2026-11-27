@@ -194,5 +194,43 @@
     },
     "copyright": "© 2026 دفتر. جميع الحقوق محفوظة.",
     "madeFor": "مصمم للأعمال الصغيرة"
+  },
+  "auth": {
+    "fields": {
+      "emailLabel": "البريد الإلكتروني",
+      "emailPlaceholder": "you@yourshop.com",
+      "passwordLabel": "كلمة المرور",
+      "showPassword": "إظهار",
+      "hidePassword": "إخفاء"
+    },
+    "errors": {
+      "emailRequired": "أدخل بريدك الإلكتروني.",
+      "emailInvalid": "تحقّق من بريدك الإلكتروني. يجب أن يحتوي على الرمز @ ونقطة بعده.",
+      "passwordRequired": "أدخل كلمة المرور.",
+      "passwordTooShort": "استخدم 8 أحرف على الأقل.",
+      "businessNameRequired": "أدخل اسم عملك."
+    },
+    "login": {
+      "metaTitle": "تسجيل الدخول | دفتر",
+      "heading": "مرحبًا بعودتك",
+      "subheading": "سجّل الدخول لترى ما هو متوفّر في مخزونك.",
+      "passwordPlaceholder": "كلمة مرورك",
+      "submit": "تسجيل الدخول",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "signupPrompt": "جديد على دفتر؟",
+      "signupLink": "أنشئ حسابًا لعملك"
+    },
+    "signup": {
+      "metaTitle": "إنشاء حساب | دفتر",
+      "heading": "جهّز محلّك",
+      "subheading": "يستغرق ذلك دقيقة تقريبًا.",
+      "businessNameLabel": "اسم العمل",
+      "businessNameHint": "الاسم الذي يعرفه زبائنك.",
+      "businessNamePlaceholder": "مقهى الزاوية",
+      "passwordHint": "8 أحرف على الأقل.",
+      "submit": "إنشاء حساب",
+      "loginPrompt": "لديك حساب؟",
+      "loginLink": "سجّل الدخول"
+    }
   }
 }

@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 // arbitrary colours or Tailwind's default palette, so the whole product follows the
 // tokens in app/globals.css (copied from ledger/tokens.css).
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
-const SCANNED_DIRS = ["components/home", "app/[lang]"];
+const SCANNED_DIRS = ["components/home", "components/auth", "app/[lang]"];
 
 const PALETTE = "slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose";
 const RULES: [string, RegExp][] = [
