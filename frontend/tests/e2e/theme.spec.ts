@@ -1,3 +1,9 @@
+/*
+ * Light and dark mode: the page follows the device setting, uses the Ledger
+ * colours in each, and the theme toggle's choice survives a reload and a
+ * switch to the other language.
+ */
+
 import { expect, test } from "@playwright/test";
 
 const bodyBackground = (page: import("@playwright/test").Page) =>

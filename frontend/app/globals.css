@@ -1,58 +1,31 @@
+/*
+ * Global styles for the whole site.
+ *
+ *   1. Imports           Tailwind, animation utilities and shadcn's base styles
+ *   2. Ledger colours    the design system's colour values, light and dark
+ *   3. shadcn colours    shadcn's colour names, pointed at the Ledger colours
+ *   4. Tailwind setup    which colours, fonts and corner sizes become classes
+ *   5. Base styles       body, focus ring, Arabic text
+ *   6. Shared classes    .shell and .eyebrow
+ *   7. Motion            scroll-in animations and the card hover lift
+ */
+
+/* ---------- 1. Imports ---------- */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* `dark:` classes apply when <html> has the `dark` class (set by BootScript and ThemeToggle). */
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist), var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), var(--font-plex-arabic), ui-monospace, monospace;
-  --font-heading: var(--font-geist), var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
-
-/*
- * Colours come from the Ledger Clean design system (ledger/tokens.css).
- * The Ledger tokens are defined first; the shadcn variables below only point at them,
- * so every component follows the system and dark mode needs no `dark:` colour classes.
+/* ---------- 2. Ledger colours ----------
+ *
+ * Copied from the Ledger Clean design system (ledger/tokens.css). A unit test
+ * checks these stay identical to that file, so change colours there first.
+ * Light values sit on :root; the .dark block swaps in the dark values.
  */
+
 :root {
   color-scheme: light;
   --l-primary: #0b6b63;
@@ -103,44 +76,74 @@
   --l-chart-3: #9085e9;
 }
 
-/* shadcn variables mapped onto Ledger tokens (same in both themes). */
+/* ---------- 3. shadcn colours ----------
+ *
+ * shadcn components use names like `primary`, `muted` and `card`. Pointing them
+ * at the Ledger colours means every component follows the design system, and
+ * switching to dark mode needs no extra classes: the Ledger values change and
+ * everything follows.
+ */
+
 :root {
-  --background: var(--l-canvas);
-  --foreground: var(--l-ink);
+  --background: var(--l-canvas); /* page background */
+  --foreground: var(--l-ink); /* main text */
   --card: var(--l-surface);
   --card-foreground: var(--l-ink);
   --popover: var(--l-surface);
   --popover-foreground: var(--l-ink);
-  --primary: var(--l-primary);
-  --primary-foreground: var(--l-on-primary);
-  --secondary: var(--l-primary-soft);
+  --primary: var(--l-primary); /* main buttons, links, focus ring */
+  --primary-foreground: var(--l-on-primary); /* text on primary */
+  --secondary: var(--l-primary-soft); /* soft highlight behind icons and selected items */
   --secondary-foreground: var(--l-primary);
   --muted: var(--l-canvas);
-  --muted-foreground: var(--l-muted);
-  --accent: var(--l-primary-soft);
+  --muted-foreground: var(--l-muted); /* secondary text */
+  --accent: var(--l-primary-soft); /* hover background of outline and ghost buttons */
   --accent-foreground: var(--l-ink);
   --destructive: var(--l-danger-solid);
-  --border: var(--l-border);
-  --input: var(--l-border-strong);
+  --border: var(--l-border); /* card edges and dividers */
+  --input: var(--l-border-strong); /* form field and outline button edges */
   --ring: var(--l-primary);
   --chart-1: var(--l-chart-1);
   --chart-2: var(--l-chart-2);
   --chart-3: var(--l-chart-3);
-  --chart-4: var(--l-border-strong);
-  --chart-5: var(--l-border);
   --radius: 0.75rem;
-  --sidebar: var(--l-canvas);
-  --sidebar-foreground: var(--l-ink);
-  --sidebar-primary: var(--l-primary);
-  --sidebar-primary-foreground: var(--l-on-primary);
-  --sidebar-accent: var(--l-primary-soft);
-  --sidebar-accent-foreground: var(--l-primary);
-  --sidebar-border: var(--l-border);
-  --sidebar-ring: var(--l-primary);
 }
 
-/* Ledger token names as Tailwind colours: bg-canvas, text-ink, bg-warning-soft, ... */
+/* ---------- 4. Tailwind setup ----------
+ *
+ * Every `--color-x` here becomes Tailwind classes like `bg-x`, `text-x` and `border-x`.
+ */
+
 @theme inline {
+  /* `font-sans` and `font-heading` both use the language-aware font list from "Fonts" below. */
+  --font-sans: var(--font-text);
+  --font-heading: var(--font-text);
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* shadcn names (section 3) */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+
+  /* Ledger names (section 2), for things shadcn has no name for: bg-canvas, text-ink, bg-warning-soft, ... */
   --color-canvas: var(--l-canvas);
   --color-surface: var(--l-surface);
   --color-ink: var(--l-ink);
@@ -156,55 +159,114 @@
   --color-danger-soft: var(--l-danger-soft);
   --color-danger-solid: var(--l-danger-solid);
   --color-on-danger: var(--l-on-danger);
+
+  /* Corner sizes, all based on --radius: rounded-sm, rounded-lg, rounded-xl, ... */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ---------- 5. Base styles ---------- */
+
+/*
+ * Fonts: which font each language's text uses.
+ *
+ * Next.js puts a stand-in font ("Geist Fallback", which is really Arial) right
+ * after Geist. Arial has Arabic letters, so with Geist first, Arabic text was
+ * drawn in Arial and never reached IBM Plex Sans Arabic. So anything in
+ * lang="ar" lists the Arabic font first instead.
+ *
+ * This is a variable rather than a plain font-family so that `:lang(ar)` also
+ * works on a small Arabic piece inside an English page (the language switcher).
+ */
+:root {
+  --font-text: var(--font-geist), var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
+}
+
+:lang(ar) {
+  --font-text: var(--font-plex-arabic), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-  button:not(:disabled), [role="button"]:not(:disabled) {
-    cursor: pointer;
-  }
+
   html {
     @apply font-sans;
   }
-  /* Ledger focus ring: one style for everything you can tap. */
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* One focus outline for everything you can tab to (Ledger rule). */
   :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
     outline: 3px solid var(--primary);
     outline-offset: 2px;
   }
-  /* Arabic letters must stay joined: no tracking, and drop Latin-only uppercase styling. */
+
+  /* Letter spacing breaks the joins between Arabic letters, so turn it off on the Arabic page. */
   html[dir="rtl"] * {
     letter-spacing: normal !important;
   }
 }
 
+/* ---------- 6. Shared classes ---------- */
+
 @layer components {
+  /* The centred page column every section sits in, with side padding that grows on bigger screens. */
   .shell {
     @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
   }
+
+  /* The small coloured label above each section title. */
   .eyebrow {
     @apply inline-flex items-center gap-2 text-sm font-medium text-primary;
   }
 }
 
-/* ---------- Motion ---------- */
+/* ---------- 7. Motion ----------
+ *
+ * Everything below only applies when:
+ *   - the visitor hasn't asked their device for reduced motion, and
+ *   - JavaScript is running (BootScript adds the `js` class to <html>).
+ * Otherwise nothing is hidden or animated, and the page simply shows.
+ */
 
 @keyframes bar-grow {
-  from { transform: scaleY(0); }
-  to { transform: scaleY(1); }
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
 
 @keyframes fill-grow {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Elements marked data-reveal fade up as they scroll into view (see ScrollReveal). */
+  /*
+   * Scroll-in: elements with `data-reveal` start invisible and 28px lower.
+   * ScrollReveal adds `data-revealed` when they come into view, and they slide up into place.
+   * `--reveal-delay` (set with the revealDelay() helper) staggers items in a list.
+   */
   html.js [data-reveal] {
     opacity: 0;
     transform: translateY(28px);
@@ -214,41 +276,54 @@
       translate 0.3s ease,
       border-color 0.3s ease;
   }
-  html.js [data-reveal="fade"] {
-    transform: none;
-  }
+
+  /* `data-reveal="zoom"` also grows slightly as it appears (dashboard preview, footer banner). */
   html.js [data-reveal="zoom"] {
     transform: translateY(40px) scale(0.97);
   }
+
   html.js [data-reveal][data-revealed] {
     opacity: 1;
     transform: none;
   }
 
-  /* Dashboard preview: chart bars and progress fills grow once it is revealed. */
+  /*
+   * Dashboard preview: once it has appeared, the chart bars grow up and the
+   * best-seller bars fill in, one after another (`--i` is each bar's position).
+   */
   html.js [data-reveal] .bar-grow,
   html.js [data-reveal] .fill-grow {
     transform: scale(0);
   }
+
   html.js [data-revealed] .bar-grow {
     transform-origin: bottom;
     animation: bar-grow 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: calc(400ms + var(--i, 0) * 70ms);
   }
+
   html.js [data-revealed] .fill-grow {
     transform-origin: left;
     animation: fill-grow 1s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: calc(600ms + var(--i, 0) * 90ms);
   }
+
+  /* In Arabic the bars fill from the right. */
   html[dir="rtl"].js [data-revealed] .fill-grow {
     transform-origin: right;
   }
 
-  /* Hover lift uses `translate`, separate from the reveal's `transform`, so both can apply. */
-  /* Ledger uses borders, not shadows: hover lifts the card and edges it in primary. */
+  /*
+   * `.lift`: cards rise a little and get a coloured edge on hover. Ledger uses
+   * borders instead of shadows. It moves with `translate` rather than `transform`
+   * so it doesn't fight the scroll-in animation above, which uses `transform`.
+   */
   .lift {
-    transition: translate 0.3s ease, border-color 0.3s ease;
+    transition:
+      translate 0.3s ease,
+      border-color 0.3s ease;
   }
+
   .lift:hover {
     translate: 0 -4px;
     border-color: var(--primary);

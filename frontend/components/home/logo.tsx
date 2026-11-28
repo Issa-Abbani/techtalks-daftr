@@ -4,11 +4,17 @@ import { BookOpenText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
+  /** "Daftr" or "دفتر", from the locale file. */
   name: string;
+  /** Where clicking the logo goes, usually the homepage for the current language. */
   href: string;
   className?: string;
 };
 
+/**
+ * The Daftr logo: the notebook mark in a coloured tile, followed by the name.
+ * The tile tilts slightly when you hover the logo.
+ */
 export function Logo({ name, href, className }: LogoProps) {
   return (
     <Link

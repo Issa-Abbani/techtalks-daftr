@@ -1,3 +1,9 @@
+/*
+ * Scroll-in animations: content below the fold waits until it's scrolled to,
+ * nothing stays hidden, and visitors with reduced motion or without JavaScript
+ * see everything straight away.
+ */
+
 import { expect, test, type Page } from "@playwright/test";
 
 import { scrollThroughPage } from "./helpers";

@@ -1,14 +1,31 @@
 import type { Page } from "@playwright/test";
 
-/** Scrolls top to bottom in viewport steps so every scroll-reveal element triggers, then waits for transitions. */
+/**
+ * Scrolls through the whole page so every fade-in animation (`data-reveal`) fires,
+ * then goes back to the top and waits for the animations to finish.
+ */
 export async function scrollThroughPage(page: Page) {
   await page.evaluate(async () => {
-    // The page uses smooth scrolling; jump instantly so each step actually lands.
+    // Wait for real rendered frames, not just time: the browser only notices an
+    // element coming into view when it draws a frame, and under load a short
+    // timer can pass without one.
+    const waitForFrames = async (count: number) => {
+      for (let i = 0; i < count; i++) await new Promise((resolve) => requestAnimationFrame(resolve));
+    };
+
+    // The page uses smooth scrolling; jump instantly so each step lands where we asked.
     const step = window.innerHeight * 0.6;
     for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
       window.scrollTo({ top: y, behavior: "instant" });
-      await new Promise((r) => setTimeout(r, 80));
+      await waitForFrames(3);
     }
+
+    // Anything still hidden (for example because the page was still loading) gets scrolled to directly.
+    for (const element of document.querySelectorAll("[data-reveal]:not([data-revealed])")) {
+      element.scrollIntoView({ block: "center", behavior: "instant" });
+      await waitForFrames(3);
+    }
+
     window.scrollTo({ top: 0, behavior: "instant" });
   });
   await page.waitForTimeout(1500);
